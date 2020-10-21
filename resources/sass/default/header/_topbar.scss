@@ -1,0 +1,81 @@
+.topbar {
+  border-bottom: 1px solid #EEEEEE;
+  color: #666666;
+  height: 30px;
+  margin: 5px auto 0;
+
+
+  .list {
+
+    line-height: initial;
+
+    >.item {
+      padding-top:0 !important;
+      padding-bottom:0 !important;
+      line-height: initial !important;
+
+      i {
+        color:#f1592a;
+        font-size:18px;
+      }
+
+      a {
+        color:#666666;
+        font-size:13px;
+        text-transform: uppercase;
+      }
+
+    }
+
+
+
+    span.text,
+    .menu {
+      @media screen and (max-width: $mobile-bp) {
+        display: none;
+      }
+    }
+  }
+
+  .ui.pointing.dropdown {
+
+    > .menu::after {
+      background: #1b1c1d;
+    }
+  }
+
+  .ui.grid > .row {
+    padding: 0.2em 0em;
+  }
+
+ socialbar {
+        margin-top: 0px;
+        display: inline-block;
+
+        a {
+            i.icon {
+                font-size: 1.2em;
+				line-height: 0.95em;
+			}
+			
+			i.icon.facebook:before {
+				content: "\f09a";
+				color: #270fbc !important;
+			}
+			i.icon.instagram:before {
+				content: "\f16d";
+				color: #f1592a !important;
+			}
+			i.icon.youtube:before {
+				content: "\f167";
+				color: #ec1313 !important;
+			}
+			i.icon.whatsapp:before {
+				content: "\f232";
+				color: #0fbc13 !important;
+			}
+        }
+	}
+
+  
+}
