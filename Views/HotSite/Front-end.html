@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+</head>
+<body>
+    @{
+        ViewBag.Title = string.IsNullOrEmpty(LojaCorp.Control.Company._Company.Title) ? LojaCorp.Control.Company._Company.NameStore : LojaCorp.Control.Company._Company.Title;
+        Layout = "~/Views/Shared/Base/_Layout.cshtml";
+    }
+    
+    @model DomainCustomer.Entities.Contact
+    
+    @{ 
+        List<DomainCustomer.Entities.ContactTopic> ListContactTopics = (List<DomainCustomer.Entities.ContactTopic>)ViewBag.ContactTopics;
+    }
+    <div class="ui grid middle aligned center aligned">
+        <div class="row">
+            <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+                @using (Ajax.BeginForm("Contact", "Customer", new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSuccess", OnFailure = "onFailure" }, new { @class = "ui large form", @id = "formContact" }))
+                {
+                    @Html.AntiForgeryToken() 
+    
+                    <div class="ui segment">
+                        <div class="ui grid  very relaxed stackable middle aligned grid left aligned">
+                            <div class="row one column">
+                                <div class="column">
+    
+                                    <div class="field required"> 
+                                        <label>Nome</label>
+                                        <div class="ui left input">
+                                            <input type="text" maxlength="100" name="Name" placeholder="Nome"
+                                                   value="" data-validate="name">
+                                        </div>
+                                    </div>
+                                    <div class="field required">
+                                        <label>E-mail</label>
+                                        <div class="ui left  input">
+                                            <input id="email" type="text" maxlength="100" name="Email" placeholder="E-mail"
+                                                   value="" data-validate="email">
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="three fields">
+                                        <div class="field required">
+                                            <label>Telefone</label>
+                                            <div class="ui left input">
+                                                
+                                                <input type="text" name="Phone"
+                                                       placeholder="(00) 00000-0000" class="masked mask_phone"
+                                                       data-validate="phone">
+                                            </div>
+                                        </div>
+                                        
+    
+                                    </div>
+                                   
+                                        <div class="field required">
+                                            <label>Assunto</label>
+                                            <div class="ui left input">
+                                                <input type="text" maxlength="100" name="Subject" placeholder="Assunto"
+                                                       value="" data-validate="assunto">
+                                            </div>
+                                        </div>
+                                    
+                                    <div class="field required">
+                                        <label>Mensagem</label>
+                                        <textarea maxlength="6000" name="Message"></textarea>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column text right">
+                                    @Html.Action("GetRecaptchaV3", "Company", new { Module = "Contact" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <a href="/Home" class="ui animated button large basic left floated form_refresh">
+                                        <div class="visible content">Voltar</div>
+                                        <div class="hidden content">
+                                            <i class="arrow left icon"></i>
+                                        </div>
+                                    </a>
+                                    <button id="submitContact" type="submit"
+                                            class="ui animated button large submit primary right floated continuar"
+                                            tabindex="0">
+                                        <div class="visible content">Enviar</div>
+                                        <div class="hidden content">
+                                            <i class="send icon"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    
+    
+    }
+</body>
+
+</html>
+
+@section custom_js {
+        <script>
+            function onSuccess(response) {
+                 
+                if (response.success == true) {
+                    swal({                 
+                        text: response.Message,
+                        type: 'success',
+                        showCancelButton: false,
+                        confirmButtonColor: '#16ab39',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'OK'
+                    }).then(function () {
+                        window.location.href = "/Home";
+                    });
+                }
+                else {
+    
+                    swal({                    
+                        text: response.Message,
+                        type: 'warning',
+                        showCancelButton: false,
+                        confirmButtonColor: '#16ab39',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            }
+    
+            function onFailure(response) {
+                 if (response.success == false) {               
+    
+                    swal({
+                        text: response.Message,
+                        type: 'error',
+                        showCancelButton: false,
+                        confirmButtonColor: '#16ab39',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'OK'
+                    }).then(function () {
+                        window.location.href = "/Home";
+                    });
+                }
+            }
+        </script>    
