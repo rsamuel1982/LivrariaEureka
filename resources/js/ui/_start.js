@@ -42,6 +42,8 @@ require('../functions/lazy_load');
 
 //--------------------[ Avaliação ]--------------------//
 require('../functions/avaliacao');
+require('../functions/formAvaliacao'); 
+
 
 //--------------------[ Start Document ]--------------------//
 $(document).ready(function(){

@@ -5,13 +5,11 @@
 
 @model DomainCustomer.Entities.Contact
 
-@{ 
-    List<DomainCustomer.Entities.ContactTopic> ListContactTopics = (List<DomainCustomer.Entities.ContactTopic>)ViewBag.ContactTopics;
-}
+
 <div class="ui grid middle aligned center aligned">
     <div class="row">
         <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
-            @using (Ajax.BeginForm("Contact", "Customer", new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSuccess", OnFailure = "onFailure" }, new { @class = "ui large form", @id = "formContact" }))
+            @using (Ajax.BeginForm("Front_End", "Hotsite", new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSuccess", OnFailure = "onFailure" }, new { @class = "ui large form", @id = "formAvaliacao" }))
             {
                 @Html.AntiForgeryToken() 
 
@@ -20,7 +18,7 @@
                         <div class="row one column">
                             <div class="column">
 
-                                <div class="field required"> 
+                                <div class="field required">
                                     <label>Nome</label>
                                     <div class="ui left input">
                                         <input type="text" maxlength="100" name="Name" placeholder="Nome"
@@ -48,7 +46,7 @@
                                     </div>
                                     
 
-                                </div>
+                                </div> 
                                
                                     <div class="field required">
                                         <label>Assunto</label>
@@ -65,11 +63,7 @@
 
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="column text right">
-                                @Html.Action("GetRecaptchaV3", "Company", new { Module = "Contact" })
-                            </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="column">
                                 <a href="/Home" class="ui animated button large basic left floated form_refresh">
@@ -78,12 +72,12 @@
                                         <i class="arrow left icon"></i>
                                     </div>
                                 </a>
-                                <button id="submitContact" type="submit"
+                                <button id="submitAvaliacao" type="submit"
                                         class="ui animated button large submit primary right floated continuar"
                                         tabindex="0">
                                     <div class="visible content">Enviar</div>
                                     <div class="hidden content">
-                                        <i class="send icon"></i>
+                                        <i class="send icon"></i> 
                                     </div>
                                 </button>
                             </div>
@@ -93,5 +87,7 @@
             }
         </div>
     </div>
-</div> 
+</div>
 
+ 
+}

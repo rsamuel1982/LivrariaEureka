@@ -41,8 +41,7 @@ $(document).on("click", "#submitContact", function(e){
     
     return false;
 })
-
-
+ 
 
 function sendContact() {
 
