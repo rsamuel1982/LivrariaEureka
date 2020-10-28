@@ -40,6 +40,9 @@ require('./modules/jquery-ui.min');
 //--------------------[ LazyLoad ]--------------------//
 require('../functions/lazy_load');
 
+//--------------------[ Avaliação ]--------------------//
+require('../functions/avaliacao');
+
 //--------------------[ Start Document ]--------------------//
 $(document).ready(function(){
     "use strict";
