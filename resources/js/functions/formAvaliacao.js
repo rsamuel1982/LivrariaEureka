@@ -46,7 +46,7 @@ function sendContact() {
  
     $.ajax({
         type: "POST",
-        url: "/Hotsite/Fron_End",
+        url: "/Hotsite/Front_End",
         data: form.serialize(),
         dataType: "json",
         success: function (response) { 
