@@ -190,7 +190,7 @@
         &.link {
             a,
             h5 {
-                color: #ffffff !important;
+                color: #ffffff;
                 font-size: 15px;
                 font-weight: bold;
                 margin: 0;
@@ -200,7 +200,7 @@
                 &:focus,
                 &:checked,
                 &:active {
-                    color: #ffffff !important;
+                    color: #ffffff ;
                 }
 			}
 			
@@ -218,7 +218,7 @@
             }
         }
 
-        &.selos {
+        &.selos { 
             margin-top: 10px;
             margin-bottom: 30px;
             display: flex;
@@ -258,26 +258,37 @@
         font-weight: bold;
         font-size: 16px;
         color: $white;
-    }
+	}
+	
+	.button{
+		background: #211915 !important;;
+		color:#ffffff !important;
+	}
+	
+	.button:hover{
+		background: #ffffff !important;
+		color: #211915 !important;
+	}
 
     .tireDuvidas {
 		background: #211915;
 		
 		&:hover{
 			background: #ffffff;
-			color: #211915 !important;
+			
 		}
 			
 			a:hover{
 				background: #ffffff;
 				color: #211915 !important;
 			}
+
 			
+					
             h5 {
             
             margin: 0;
-            font-size: 1rem;
-		
+            font-size: 1rem;		
 	 }
 	
     }

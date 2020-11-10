@@ -43,6 +43,7 @@ require('../functions/lazy_load');
 //--------------------[ Avaliação ]--------------------//
 require('../functions/avaliacao');
 require('../functions/formAvaliacao'); 
+require('../functions/front-end'); 
 
 
 //--------------------[ Start Document ]--------------------//

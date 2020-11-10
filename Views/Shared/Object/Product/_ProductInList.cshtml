@@ -11,7 +11,7 @@
         <div class="meta">
         <h3><span> @if (@Model.Brand != null)
             {
-              <h5 itemprop="productBrand" class="marcaProduto">@Model.Brand.Name</h5>
+              <a href="@Model.Brand.UrlFriendly" title="@Model.Brand.Name">@Model.Brand.Name</a>
            }
               else
            {

@@ -1,13 +1,20 @@
-﻿export function getFromStorage(key) {
-  return sessionStorage.getItem(key);
+﻿
+
+window.onload = function(){
+    var cName = document.getElementById("Name");    
 }
 
-export function checkStorage(key) {
-  return sessionStorage.getItem(key) !== null ? true : false;
-}
 
-export function setInStorage(key, value) {
-  sessionStorage.setItem(key, value);
-}
 
-/*export default Front_End;*/
+    /*function salvarNome(){
+        if(){
+        sessionStorage.setItem('Nome', 'Robson');
+        }
+    } 
+
+
+
+
+
+
+/*sessionStorage.setItem('Nome',JASON.stringfy(Name))*/

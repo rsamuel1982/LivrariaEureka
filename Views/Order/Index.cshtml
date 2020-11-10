@@ -96,7 +96,7 @@
                                             }
                                         }
                                         <a class="ui icon grey small button margin top bottom" id="reOrder" data-tooltip="Refazer pedido" data-idorder="@order.IdOrder">
-                                            <i class="cart icon"></i>
+                                            <i class="cart-white icon"></i>
                                         </a>
                                         @{
                                             if (order.NameStatus.ToLower().Contains("novo") || order.NameStatus.ToLower().Contains("aprovação"))
@@ -120,10 +120,10 @@
                                             }
                                         }
                                         <a class="ui icon action small button printOrder margin top bottom" data-tooltip="Imprimir Pedido" data-id-order="@order.IdOrder">
-                                            <i class="print icon"></i>
+                                            <i class="print-white icon"></i>
                                         </a>
                                         <a class="ui icon teal small button" href="~/Order/Details/@order.IdOrder" data-tooltip="Visualizar Pedido">
-                                            <i class="unhide icon"></i>
+                                            <i class="unhide-white icon"></i>
                                         </a>
                                     </td>
                                 </tr>

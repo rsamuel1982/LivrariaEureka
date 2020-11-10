@@ -706,12 +706,7 @@
             <!--COMEÇO DETALHES PRODUTO-->
             <div class="ui bottom attached tab segment basic" data-tab="detalhes" id="detalhes">
                 <div class="ui grid one column">
-                    <div class="column">
-                        @Html.Raw(@Model.DescriptionDetail)
-                        @if (@Model.Brand != null) {
-                            @Html.Raw(@Model.Brand.Name)
-                        }
-                    </div>
+                    
                     @if (Model.Attributes != null && Model.Attributes.Count() > 0)
                     {
                         var useFilter = Model.Attributes.Where(attr => attr.useFilter).ToList();
@@ -719,6 +714,7 @@
                         {
                             <div class="column">
                                 <h4>Informações Adicionais do Produto</h4>
+                                
                                 @foreach (var atribute in Model.Attributes)
                                 {
                                     if (atribute.useFilter)
@@ -737,6 +733,12 @@
                                         </p>
                                     }
                                 }
+                                <div class="column autor">
+                                    <strong>Autor: </strong>
+                                    @if (@Model.Brand != null) {
+                                        @Html.Raw(@Model.Brand.Name)
+                                         }
+                                </div>
                             </div>
                         }
                     }

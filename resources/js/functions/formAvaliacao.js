@@ -1,5 +1,6 @@
 ﻿import {isValidEmail} from "../functions/validate"
 import { _alert, } from "../functions/message";
+import {salvarNome} from "../functions/front-end";
 
 
 $(document).on("click", "#submitAvaliacao", function(e){ 
@@ -41,12 +42,17 @@ $(document).on("click", "#submitAvaliacao", function(e){
 
 
 function sendContact() {
+    
+        
+        sessionStorage.setItem('Nome', 'Robson');
+    
+
 
     var form = $("#formAvaliacao");
  
     $.ajax({
         type: "POST",
-        url: "/Customer/Contactgit",
+        url: "/Customer/Contact",
         data: form.serialize(),
         dataType: "json",
         success: function (response) { 
@@ -78,6 +84,8 @@ function sendContact() {
             }
 
         },
+
+       
         
         complete: function () {
             $("submitAvaliacao").removeClass("loading");

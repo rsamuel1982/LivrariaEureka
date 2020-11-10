@@ -645,6 +645,7 @@ i.icon.angle.double.up:before {
 }
 i.icon.angle.down:before {
     content: "\f107";
+    color:#ffffff !important;
 }
 i.icon.angle.left:before {
     content: "\f104";
@@ -2273,6 +2274,10 @@ i.icon.power.off:before {
 i.icon.print:before {
     content: "\f02f";
 }
+i.icon.print-white:before {
+    content: "\f02f";
+    color: #ffffff !important;
+}
 i.icon.product.hunt:before {
     content: "\f288";
 }
@@ -3244,6 +3249,10 @@ i.icon.call:before {
 i.icon.cancel:before {
     content: "\f00d";
 }
+i.icon.cart-white:before {
+    content: "\f07a";
+    color: #ffffff !important;
+}
 i.icon.cart:before {
     content: "\f07a";
 }
@@ -3855,6 +3864,10 @@ i.icon.try:before {
 }
 i.icon.unhide:before {
     content: "\f06e";
+}
+i.icon.unhide-white:before {
+    content: "\f06e";
+    color: #ffffff !important; 
 }
 i.icon.unlinkify:before {
     content: "\f127";
