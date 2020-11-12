@@ -2792,6 +2792,10 @@ i.icon.transgender.alternate:before {
 i.icon.trash:before {
     content: "\f1f8";
 }
+i.icon.trash-white:before {
+    content: "\f1f8";
+    color: #ffffff !important; 
+}
 i.icon.trash.alternate:before {
     content: "\f2ed";
 }
@@ -3539,10 +3543,14 @@ i.icon.mail.forward:before {
     content: "\f064";
 }
 i.icon.mail.square:before {
-    content: "\f199";
+    content: "\f199"; 
 }
 i.icon.mail:before {
     content: "\f0e0";
+}
+i.icon.mail-white:before {
+    content: "\f0e0";
+    color: #ffffff !important;
 }
 i.icon.male.homosexual:before {
     content: "\f227";
@@ -3865,7 +3873,7 @@ i.icon.try:before {
 i.icon.unhide:before {
     content: "\f06e";
 }
-i.icon.unhide-white:before {
+i.icon.unhide-white:before { 
     content: "\f06e";
     color: #ffffff !important; 
 }

@@ -264,7 +264,7 @@
                 <h1 itemprop="name" class="nomeProduto" id="produto-nome">@Model.Name</h1>
                 @if (Model.Brand != null)
                 {
-                    <h5 itemprop="productBrand" class="marcaProduto">@Model.Brand.Name</h5>
+                    <a href="@Model.Brand.UrlFriendly" title="@Model.Brand.Name">@Model.Brand.Name</a>
                 }
                 else
                 {
@@ -314,7 +314,7 @@
                             <h1 itemprop="name" class="nomeProduto" id="produto-nome">@Model.Name</h1>
                             @if (@Model.Brand != null)
                             {
-                                <h5 itemprop="productBrand" class="marcaProduto">@Model.Brand.Name</h5>
+                                <a href="@Model.Brand.UrlFriendly" title="@Model.Brand.Name">@Model.Brand.Name</a>
                             }
                             else
                             {
@@ -735,9 +735,14 @@
                                 }
                                 <div class="column autor">
                                     <strong>Autor: </strong>
-                                    @if (@Model.Brand != null) {
-                                        @Html.Raw(@Model.Brand.Name)
-                                         }
+                                   <span> @if (@Model.Brand != null)
+                                        {
+                                        <a href="@Model.Brand.UrlFriendly" title="@Model.Brand.Name">@Model.Brand.Name</a>
+                                    }
+                                        else
+                                    {
+                                        <h5 itemprop="productBrand" class="marcaProduto"></h5>
+                                    }</span>
                                 </div>
                             </div>
                         }
